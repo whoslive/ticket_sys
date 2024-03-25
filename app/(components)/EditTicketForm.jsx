@@ -65,12 +65,7 @@ const EditTicketForm = ({ ticket }) => {
     router.push("/");
   };
 
-  const categories = [
-    "Hardware Problem",
-    "Software Problem",
-    "Application Deveopment",
-    "Project",
-  ];
+  const categories = ["Application Deveopment", "Project", "Assignment"];
 
   return (
     <div className=" flex justify-center">
@@ -88,6 +83,7 @@ const EditTicketForm = ({ ticket }) => {
           onChange={handleChange}
           required={true}
           value={formData.title}
+          className="bg-white text-black"
         />
         <label>Description</label>
         <textarea
@@ -97,12 +93,14 @@ const EditTicketForm = ({ ticket }) => {
           required={true}
           value={formData.description}
           rows="5"
+          className="bg-white text-black"
         />
         <label>Category</label>
         <select
           name="category"
           value={formData.category}
           onChange={handleChange}
+          className="bg-white text-black"
         >
           {categories?.map((category, _index) => (
             <option key={_index} value={category}>
@@ -170,14 +168,19 @@ const EditTicketForm = ({ ticket }) => {
           onChange={handleChange}
         />
         <label>Status</label>
-        <select name="status" value={formData.status} onChange={handleChange}>
+        <select
+          name="status"
+          value={formData.status}
+          onChange={handleChange}
+          className="bg-white text-black"
+        >
           <option value="not started">Not Started</option>
           <option value="started">Started</option>
           <option value="done">Done</option>
         </select>
         <input
           type="submit"
-          className="btn max-w-xs"
+          className="btn max-w-xs bg-white text-black"
           value={EDITMODE ? "Update Ticket" : "Create Ticket"}
         />
       </form>

@@ -10,7 +10,7 @@ config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Ticket System",
+  title: "Tickets System",
   description: "Creating a functional ticketing system.",
 };
 
